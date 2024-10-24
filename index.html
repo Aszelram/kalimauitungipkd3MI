@@ -16,33 +16,26 @@
         }
         /* Tabel responsive */
         .table-responsive {
-            font-size: 1rem; /* Ukuran font normal */
+            font-size: 1rem;
         }
-        /* Gunakan padding lebih kecil untuk tampilan mobile */
+        /* Atur padding tabel lebih kecil untuk perangkat mobile */
         .table-sm th, .table-sm td {
-            padding: 0.6rem;
+            padding: 0.4rem; /* Lebih kecil untuk tampilan mobile */
         }
-        /* Warna header semester */
-        .semester-title {
-            background-color: #f8f9fa;
-            font-weight: bold;
-            text-align: center;
-        }
-        /* Untuk memastikan tampilan bagus di layar kecil */
+        /* Untuk memastikan tabel lebih ramping di layar kecil */
         @media (max-width: 768px) {
             body {
                 margin: 10px;
             }
             h1, h5 {
-                font-size: 1.5rem;
+                font-size: 1.2rem; /* Ukuran lebih kecil untuk judul */
             }
             .table-responsive {
-                font-size: 0.9rem;
+                font-size: 0.8rem; /* Sesuaikan font tabel di layar kecil */
             }
             .table-sm th, .table-sm td {
-                padding: 0.4rem;
+                padding: 0.3rem; /* Sesuaikan padding tabel di layar kecil */
             }
-            /* Atur margin input untuk tampilan yang lebih rapi di layar kecil */
             .form-control {
                 font-size: 0.9rem;
             }
@@ -52,7 +45,7 @@
 <body>
     <div class="container">
         <h1>Perhitungan IPK - Manajemen Informatika D3</h1>
-        <h5>kali aja mau Hitung IPK dengan mudah! iseng aja ini mah</h5>
+        <h5>Hitung IPK dengan mudah!</h5>
 
         <!-- Form untuk input nama dan tabel nilai -->
         <form id="ipkForm">
@@ -68,8 +61,8 @@
                     <thead class="table-dark">
                         <tr>
                             <th class="col-md-6">Mata Kuliah</th>
-                            <th class="col-md-2">SKS</th>
-                            <th class="col-md-4">Nilai</th>
+                            <th class="col-md-4">SKS</th>
+                            <th class="col-md-2">Nilai</th>
                         </tr>
                     </thead>
                     <tbody id="matkulList">
@@ -193,10 +186,8 @@
             // Hitung IPK
             const ipk = totalNilai / totalSKS;
 
-            // Tampilkan hasil IPK
-            const hasilIPK = document.getElementById('hasilIPK');
-            hasilIPK.style.display = 'block';
-            hasilIPK.innerHTML = `Nama: ${nama} <br> Jurusan: Manajemen Informatika <br> IPK Anda adalah: ${ipk.toFixed(2)}`;
+            // Tampilkan hasil IPK sebagai popup alert
+            alert(`Nama: ${nama}\nJurusan: Manajemen Informatika\nIPK Anda adalah: ${ipk.toFixed(2)}`);
         }
     </script>
 </body>
